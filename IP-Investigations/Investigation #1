@@ -8,17 +8,19 @@ Type: IP Investigation
 Determine the ownership, reputation, infrastructure associations, and potential security risk of 8.8.8.8.
 
 3. Key Findings
-Evidence	Finding
-Detection	0/91
-Malicious detections	0
-Suspicious detections	0
-ASN	AS15169
-Organization	Google LLC
-Network	8.8.8.0/24
-RIR	ARIN
-RDAP/WHOIS	Registered to Google LLC
-TLS Certificate	dns.google
-Certificate Issuer	Google Trust Services
+| Evidence              | Finding                  |
+| --------------------- | ------------------------ |
+| Detection             | **0/91**                 |
+| Malicious detections  | **0**                    |
+| Suspicious detections | **0**                    |
+| ASN                   | **AS15169**              |
+| Organization          | **Google LLC**           |
+| Network               | `8.8.8.0/24`             |
+| RIR                   | **ARIN**                 |
+| RDAP/WHOIS            | Registered to Google LLC |
+| TLS Certificate       | `dns.google`             |
+| Certificate Issuer    | Google Trust Services    |
+
 4. Analysis
 
 Multiple sources support that 8.8.8.8 is part of Google's DNS infrastructure:
