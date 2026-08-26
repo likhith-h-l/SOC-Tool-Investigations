@@ -1,0 +1,96 @@
+VirusTotal Investigation #5 — 104.21.16.1 IP Analysis
+1. Indicator
+IP: 104.21.16.1
+Tool: VirusTotal
+Type: IP Investigation
+2. Objective
+
+Determine the reputation, ownership, related infrastructure, and potential security risk associated with the IP.
+
+3. Key Findings
+| Evidence              | Finding                |
+| --------------------- | ---------------------- |
+| Detection             | **0/91**               |
+| Malicious detections  | **0**                  |
+| Suspicious detections | **0**                  |
+| Community Score       | **-147**               |
+| ASN                   | **AS13335**            |
+| Organization          | **Cloudflare, Inc.**   |
+| Network               | `104.21.0.0/17`        |
+| Passive DNS           | **~200 relationships** |
+| Communicating files   | **346.2K**             |
+| Referring files       | **121**                |
+| TLS/SSL               | **Not available**      |
+
+The IP range is directly allocated to Cloudflare and belongs to shared Cloudflare infrastructure.
+
+4. Supporting Evidence
+
+Despite the IP having 0/91 detections, VirusTotal showed concerning related activity:
+
+Community Score: -147
+346.2K communicating file relationships
+121 referring files
+Several highly detected files, including:
+c2UKI8tEN.exe → 61/71
+localfile~ → 65/70
+Wextract → 55/71
+1W49u3.exe → 57/71
+
+VirusTotal also showed approximately 200 passive DNS relationships.
+
+5. Analysis
+
+The evidence is mixed.
+
+Clean/neutral:
+
+0/91 direct IP detection
+Cloudflare ownership
+Active allocation
+Shared CDN infrastructure
+
+Concerning:
+
+Very negative community score
+Large number of communicating files
+Highly detected files
+121 referring files
+Numerous passive DNS relationships
+
+However, because Cloudflare provides shared CDN/reverse-proxy infrastructure, malicious files or domains associated with the IP do not automatically make the IP itself malicious. Therefore, I classified the IP as Suspicious rather than Malicious.
+
+6. SOC Analyst Perspective
+
+If 104.21.16.1 appeared in an alert, I would not immediately block the IP.
+
+I would investigate:
+
+Internal host
+Username
+Process responsible for the connection
+Destination port/protocol
+DNS query
+Domain/URL accessed
+Timestamp and frequency
+Endpoint alerts
+Related files
+Other internal hosts communicating with the same domain/IP
+
+If malicious activity is confirmed, I would follow the incident-response procedure and consider containment actions.
+
+7. Final Verdict
+
+Classification: Suspicious
+
+Confidence: Medium
+
+Detection: 0/91
+
+Community Score: -147
+
+Recommended Action: Investigate the specific domain, process, DNS query, and network communication before blocking or isolating the endpoint.
+
+8. Key Learning
+
+0/91 does not automatically mean an IP is completely safe.
