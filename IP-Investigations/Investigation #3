@@ -1,0 +1,79 @@
+VirusTotal Investigation #3 — 185.220.101.1 IP Analysis
+1. Indicator
+IP: 185.220.101.1
+Tool: VirusTotal
+Type: IP Investigation
+2. Objective
+
+Determine the reputation, ownership, related infrastructure, and potential malicious activity associated with the IP.
+
+3. Key Findings
+| Evidence                    | Finding                           |
+| --------------------------- | --------------------------------- |
+| Detection                   | **15/91**                         |
+| Malicious detections        | **2**                             |
+| Suspicious detections       | **2**                             |
+| Community Score             | **2**                             |
+| ASN                         | **AS60729**                       |
+| Organization                | **Stiftung Erneuerbare Freiheit** |
+| Network                     | `185.220.101.0/27`                |
+| RIR                         | **RIPE NCC**                      |
+| Communicating files         | **115**                           |
+| Referring files             | **200**                           |
+| Historical SSL certificates | **4**                             |
+| Historical WHOIS lookups    | **16**                            |
+
+VirusTotal showed multiple vendor classifications including Malicious, Phishing, Malware, and Suspicious.
+
+4. Supporting Evidence
+
+Several highly detected files were associated with the IP:
+
+RecoveryVer2.4.exe → 56/72
+config.dll → 50/73
+324b44i64.exe → 60/70
+csrss.exe → 56/70
+q6zwj36h1.exe → 57/70
+
+VirusTotal also showed multiple passive DNS relationships, including vesha.synology.me and other domains.
+
+5. Analysis
+
+Unlike the previous investigations, this IP has multiple independent indicators of concern:
+
+15/91 vendor detection
+Multiple vendors reporting malicious/phishing/malware activity
+Highly detected communicating files
+Multiple passive DNS relationships
+Historical certificate and WHOIS information
+
+A single file communicating with an IP would not prove the IP itself is malicious. However, the combination of multiple independent indicators significantly increases confidence that this IP is associated with malicious activity.
+
+6. SOC Analyst Perspective
+
+If this IP appeared in an organization's alert, I would not close the alert.
+
+I would investigate:
+
+Internal host that contacted the IP
+User associated with the host
+Process responsible for the connection
+Destination port and protocol
+DNS queries
+Connection time and frequency
+Endpoint security alerts
+Suspicious files on the endpoint
+Other internal systems communicating with the IP
+7. Final Verdict
+
+Classification:  Malicious
+
+Confidence: High
+
+Reason: 15/91 detection + multiple vendor malicious classifications + highly detected communicating files + supporting DNS/infrastructure relationships.
+
+8. Key Learning
+
+A malicious IP should be assessed using multiple independent indicators. Vendor detections, related files, passive DNS, certificates, and network context provide stronger evidence than a single reputation score.
+
+SOC Action: Investigate the internal host and communication further before taking containment action
