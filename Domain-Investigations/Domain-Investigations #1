@@ -1,0 +1,71 @@
+VirusTotal Investigation #1 — google.com Domain Analysis
+1. Indicator
+Domain: google.com
+Tool: VirusTotal
+Type: Domain Investigation
+2. Objective
+
+Determine the reputation, DNS infrastructure, registration details, certificate information, and potential security risk of google.com.
+
+3. Key Findings
+| Evidence            | Finding                   |
+| ------------------- | ------------------------- |
+| Detection           | **1/92**                  |
+| Flagged category    | **Phishing**              |
+| Registration        | **15 Sep 1997**           |
+| Registrar           | **MarkMonitor, Inc.**     |
+| Nameservers         | `ns1–ns4.google.com`      |
+| Certificate Issuer  | **Google Trust Services** |
+| Certificate Subject | `*.google.com`            |
+| Popularity          | Extremely high            |
+
+VirusTotal showed one phishing detection, while the remaining vendors did not flag the domain.
+
+4. Legitimacy Indicators
+
+Several findings were consistent with Google's legitimate infrastructure:
+
+Long-standing domain registration
+Google nameservers
+Google-associated IP addresses
+HTTPS certificate issued by Google Trust Services
+Extremely high popularity
+Majority of security vendors showing no malicious detection
+5. Analysis
+
+The 1/92 phishing detection should not be ignored, but it is also not enough by itself to classify the entire google.com domain as malicious.
+
+Possible explanations include:
+
+False positive
+Vendor-specific detection
+A specific URL associated with the domain
+Another artifact related to the detection
+
+Therefore, the correct approach is to investigate what specifically triggered the phishing verdict rather than immediately labeling the domain malicious.
+
+6. SOC Analyst Perspective
+
+If google.com appeared in a security alert, I would investigate the Relations section for:
+
+Suspicious URLs
+Redirects
+Subdomains
+Associated IPs
+Communicating files
+Downloaded files
+Historical DNS
+The artifact responsible for the phishing detection
+7. Final Verdict
+
+Classification:  Low Risk / Further Investigation Required
+
+Detection: 1/92
+
+Confidence: Medium
+
+Reason: Strong legitimate infrastructure indicators exist, but the single phishing detection requires validation.
+
+8. Key Learning
+
+A single VirusTotal detection does not automatically make an entire domain malicious. Validate the detection using additional evidence before making a final decision.
