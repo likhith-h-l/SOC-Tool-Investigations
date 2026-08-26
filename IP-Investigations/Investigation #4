@@ -1,0 +1,80 @@
+VirusTotal Investigation #4 — 45.155.205.233 IP Analysis
+1. Indicator
+IP: 45.155.205.233
+Tool: VirusTotal
+Type: IP Investigation
+2. Objective
+
+Determine the reputation, ownership, infrastructure relationships, and potential malicious activity associated with the IP.
+
+3. Key Findings
+| Evidence                    | Finding              |
+| --------------------------- | -------------------- |
+| Detection                   | **18/91**            |
+| Malicious detections        | **18**               |
+| Suspicious detections       | **0**                |
+| Community Score             | **-39**              |
+| ASN                         | **AS208677**         |
+| Organization                | **Cloud.ru**         |
+| RIR                         | **RIPE NCC**         |
+| Passive DNS                 | **11 relationships** |
+| Communicating files         | **7**                |
+| Referring files             | **148**              |
+| Historical SSL certificates | **5**                |
+| Historical WHOIS            | **6**                |
+
+The IP is hosted within legitimate cloud infrastructure, but the ownership itself does not establish that the activity on the IP is legitimate.
+
+4. Supporting Evidence
+
+Several files communicating with the IP had high detection rates:
+
+hyberbotnet.exe → 51/70
+hyberbotnet.exe → 50/70
+SystemUpdate.ps1 → 20/58
+winupdate.bat → 18/52
+
+VirusTotal also showed 148 referring files and multiple passive DNS relationships.
+
+5. Analysis
+
+The evidence strongly indicates malicious activity associated with the IP:
+
+High 18/91 detection ratio
+All 18 reported detections were malicious
+Negative community score
+Multiple highly detected communicating files
+148 referring files
+Historical DNS/SSL relationships
+
+Although the IP belongs to Cloud.ru, legitimate infrastructure can be abused for malicious purposes. Therefore, network ownership should be separated from the observed activity.
+
+6. SOC Analyst Perspective
+
+If this IP appeared in an organizational alert, I would investigate:
+
+Internal source IP
+Username
+Process responsible for the connection
+Destination port/protocol
+DNS queries
+Connection timestamps and frequency
+Endpoint security alerts
+Related files
+Other internal hosts communicating with the IP
+
+If malicious activity is confirmed, I would follow the organization's incident-response process and consider blocking the indicator, isolating the endpoint, collecting evidence, and searching for related indicators.
+
+7. Final Verdict
+
+Classification: Malicious
+
+Confidence: High
+
+Detection: 18/91
+
+Recommended Action: Investigate the internal host and communication immediately; contain or block the indicator if malicious activity is confirmed.
+
+8. Key Learning
+
+Network ownership ≠ activity attribution. A legitimate cloud provider can host infrastructure that is abused for malicious activity. A SOC analyst should correlate reputation, detections, files, DNS, certificates, and network context before making a decision.
