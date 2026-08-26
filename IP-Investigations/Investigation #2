@@ -1,107 +1,59 @@
-VirusTotal Investigation #2. 1.1.1.1 IP Analysis
-1. IP Address Investigated
+VirusTotal Investigation #2 — 1.1.1.1 IP Analysis
+1. Indicator
+IP: 1.1.1.1
+Tool: VirusTotal
+Type: IP Investigation
+2. Objective
 
-IP Address: 1.1.1.1
+Determine the ownership, reputation, infrastructure associations, and potential security risk of 1.1.1.1.
 
-I looked into the IP address 1.1.1.1 using VirusTotal to find out who owns it, what its reputation is, whether security vendors have detected anything suspicious, and other important information about the IP address.
+3. Key Findings
+| Evidence              | Finding                                    |
+| --------------------- | ------------------------------------------ |
+| Detection             | **0/91**                                   |
+| Malicious detections  | **0**                                      |
+| Suspicious detections | **0**                                      |
+| Community Score       | **112**                                    |
+| ASN                   | **AS13335**                                |
+| Organization          | **Cloudflare Inc.**                        |
+| Network               | `1.1.1.0/24`                               |
+| RIR                   | **APNIC**                                  |
+| Passive/Relations     | **9 detected files communicating with IP** |
+| TLS Certificate       | `cloudflare-dns.com`                       |
+| Certificate DNS       | `one.one.one.one`                          |
 
-2. Basic Information
-Country: United States (US)
-ASN: AS13335
-AS Organization: Cloudflare, Inc.
-Network: 1.1.1.0/24
-Regional Internet Registry: APNIC
-Continent: North America (NA)
+The registration information also identified the APNIC and Cloudflare DNS Resolver project, with the network routed globally by AS13335/Cloudflare.
 
-The IP address 1.1.1.1 is associated with Cloudflare, Inc. and is part of Cloudflare's public DNS infrastructure.
+4. Analysis
 
-3. Security Detection
-Detection Ratio: 0/91
-Malicious Detections: 0
-Suspicious Detections: 0
+The evidence strongly indicates that 1.1.1.1 is associated with Cloudflare's DNS infrastructure:
 
-None of the 91 security vendors detected 1.1.1.1 as malicious or suspicious.
+VirusTotal showed 0/91 detections.
+ASN AS13335 belongs to Cloudflare.
+RDAP/WHOIS information connects the network with the APNIC and Cloudflare DNS Resolver project.
+The TLS certificate contains cloudflare-dns.com and one.one.one.one.
+The presence of communicating files does not automatically mean the IP itself is malicious.
+5. SOC Analyst Perspective
 
-This is a positive indicator, but a SOC analyst should still investigate additional information before making a final decision.
+If 1.1.1.1 appeared in a security alert, I would investigate the communication context rather than automatically trusting or blocking the IP.
 
-4. Community Reputation
-Community Score: 112
-Community Activity: 1.7K
+I would check:
 
-The community score is separate from the security-vendor detection results.
+Internal host that contacted the IP
+Process responsible for the connection
+Protocol and port
+DNS queries
+Connection frequency
+Whether the communication was expected
+Related files/domains
+6. Final Verdict
 
-Therefore, the community score should not be interpreted as the number of antivirus detections or as a direct measurement of whether the IP is malicious.
+Classification:  Likely Legitimate
 
-5. RDAP / WHOIS Investigation
+Confidence: High based on the collected evidence.
 
-The RDAP information showed:
+Reason: Cloudflare ownership + 0/91 detection + APNIC/Cloudflare DNS association + matching TLS certificate.
 
-IP Range: 1.1.1.0 – 1.1.1.255
-CIDR: 1.1.1.0/24
-Network Name: APNIC-LABS
-RIR: APNIC
-Allocation Type: ASSIGNED PORTABLE
-Status: Active
-WHOIS Server: whois.apnic.net
+7. Key Learning
 
-The RDAP/WHOIS information indicates that the 1.1.1.0/24 network is registered through APNIC.
-
-The registration information also references the APNIC and Cloudflare DNS Resolver project and indicates that the network is routed globally by AS13335 / Cloudflare.
-
-This provides evidence connecting the IP address to Cloudflare's DNS infrastructure.
-
-6. Certificate Information
-
-VirusTotal also showed TLS certificate information associated with 1.1.1.1.
-
-Important information included:
-
-Certificate Subject: cloudflare-dns.com
-Certificate Issuer: SSL.com SSL Intermediate CA ECC R2
-DNS Name: cloudflare-dns.com
-DNS Name: one.one.one.one
-IP Address: 1.1.1.1
-IP Address: 1.0.0.1
-
-The certificate information provides additional evidence that 1.1.1.1 is associated with Cloudflare's DNS resolver infrastructure.
-
-7. My Analysis
-
-Based on my investigation, I think 1.1.1.1 is legitimate.
-
-I came to this conclusion because of the following reasons:
-
-The IP address 1.1.1.1 is associated with Cloudflare, Inc. (AS13335).
-VirusTotal shows a 0/91 security-vendor detection ratio.
-RDAP/WHOIS information identifies the 1.1.1.0/24 network through APNIC and references the APNIC/Cloudflare DNS Resolver project.
-The network information indicates that the address range is routed globally by AS13335 / Cloudflare.
-The TLS certificate contains cloudflare-dns.com and one.one.one.one, providing additional evidence that the IP is associated with Cloudflare's DNS infrastructure.
-8. SOC Analyst Perspective
-
-If 1.1.1.1 appeared in a security alert, I would not close the alert simply because it has a 0/91 detection score.
-
-I would also investigate:
-
-What internal host communicated with 1.1.1.1?
-Which process generated the connection?
-What protocol and port were used?
-Was the communication related to DNS resolution?
-What DNS queries were being made?
-Was the communication expected for that system?
-What was the time and frequency of the communication?
-Are there any suspicious domains, files, or other infrastructure associated with the activity?
-9. Final
-
-Classification: Legitimate
-
-The available VirusTotal intelligence strongly indicates that 1.1.1.1 is associated with Cloudflare's DNS resolver infrastructure and does not currently show malicious or suspicious detections from the security vendors reviewed.
-
-Key Learning
-
-This investigation taught me that a SOC analyst should not rely on a single indicator such as the detection ratio.
-
-Instead, I should correlate:
-
-Detection + Reputation + ASN + Ownership + RDAP/WHOIS + Certificate + Network Activity
-
-to make a reliable security decision about an IP address.
+A clean VirusTotal score is only one piece of evidence. Correlate ownership, ASN, registration, certificates, relationships, and network behavior before making a SOC decision.
