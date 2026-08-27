@@ -1,0 +1,60 @@
+# VirusTotal Domain Investigation #5 — login.live.com
+
+### 1. Indicator
+
+- **Domain:** `login.live.com`
+- **Tool:** VirusTotal
+- **Type:** Domain Investigation
+
+### 2. Key Findings
+
+| Evidence                 | Finding                   |
+| ------------------------ | ------------------------- |
+| Detection                | **0/91**                  |
+| Creation Date            | **28 Dec 1994**           |
+| Certificate Issuer       | **DigiCert Inc.**         |
+| Certificate Organization | **Microsoft Corporation** |
+| Certificate Validity     | 4 Aug 2026 – 31 Jan 2027  |
+| Historical IPs           | **0/91**                  |
+| Example subdomains       | **0/91**                  |
+
+
+VirusTotal showed no security-vendor detections for the domain.
+
+### 3. Supporting Evidence
+
+The certificate identifies:
+
+**Microsoft Corporation**
+
+and the certificate subject is:
+
+`login.live.com`
+
+The historical IP addresses checked also showed **0/91 detections**, and the example subdomains were clean.
+
+### 4. SOC Analysis
+
+The word **`login`** in a hostname should not automatically be considered suspicious.
+
+In this case, the evidence supports legitimacy:
+
+- `0/91` detection
+- Microsoft certificate
+- Valid HTTPS certificate
+- Clean historical IPs
+- Clean example subdomains
+
+If it appeared in an alert, I would still check **community information, referring files, communicating files, and the actual URL accessed**.
+
+### 5. Final Verdict
+
+**Classification:**  **Likely Legitimate**
+
+**Risk:** Low
+
+**Reason:** Multiple independent indicators support legitimate Microsoft infrastructure, with no significant malicious findings in the investigation.
+
+### 6. Key Learning
+
+> **A suspicious-looking hostname does not automatically mean the domain is malicious. Always validate it using multiple indicators.**
