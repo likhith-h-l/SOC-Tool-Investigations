@@ -1,0 +1,85 @@
+# VirusTotal Investigation #7 — paypal.com Domain Analysis
+
+### 1. Indicator
+
+- **Domain:** `paypal.com`
+- **Tool:** VirusTotal
+- **Type:** Domain Investigation
+
+### 2. Objective
+
+Determine the **reputation, DNS infrastructure, registration, certificate information, historical activity, and related artifacts** of `paypal.com`.
+
+### 3. Key Findings
+| Evidence                 | Finding                      |
+| ------------------------ | ---------------------------- |
+| Detection                | **0/91**                     |
+| Community Score          | **60**                       |
+| Registration             | **15 Jul 1999**              |
+| Registrar                | **MarkMonitor Inc.**         |
+| DNSSEC                   | **Enabled**                  |
+| HTTPS Issuer             | **DigiCert Inc.**            |
+| Certificate Subject      | **PayPal, Inc.**             |
+| Subdomains               | **~522**                     |
+| Historical suspicious IP | `173.224.161.141` → **1/91** |
+| Related files            | Multiple files observed      |
+
+Major security vendors including Google Safe Browsing, Kaspersky, ESET, BitDefender, Fortinet, Sophos, OpenPhish and PhishTank showed clean results.
+
+### 4. Supporting Evidence
+
+The domain has several strong legitimate indicators:
+
+- Long registration history since 1999
+- PayPal-related DNS infrastructure
+- DNSSEC enabled
+- HTTPS certificate issued to **PayPal, Inc.**
+- High popularity
+- `0/91` current detection
+
+However, VirusTotal also showed:
+
+- Historical IP `173.224.161.141` → **1/91**
+- Multiple files communicating with the domain
+- Example: `Wextract` → **55/71** and **58/70** detections
+
+### 5. Analysis
+
+The **current `paypal.com` domain appears legitimate** based on the collected evidence.
+
+The suspicious related artifacts should **not automatically be attributed to PayPal**.
+
+A malicious program running on an infected machine can communicate with a completely legitimate website. Therefore:
+
+> **Malicious file communicating with a legitimate domain ≠ malicious domain.**
+
+The historical IP and suspicious files should instead become **separate investigation leads**.
+
+### 6. SOC Analyst Perspective
+
+If `paypal.com` appeared in an alert, I would investigate:
+
+- Internal host that contacted the domain
+- Process responsible for the connection
+- URL/path accessed
+- DNS query
+- Related file/hash
+- Historical IP relationships
+- Other domains/IPs contacted by the suspicious file
+- Endpoint security alerts
+
+The most interesting pivot would be the highly detected **`Wextract` file (55/71)** and investigate why it communicated with PayPal.
+
+### 7. Final Verdict
+
+**Classification:**  **Likely Legitimate / Low Risk**
+
+**Detection:** `0/91`
+
+**Confidence:** High for the current domain based on the collected evidence.
+
+**Recommended Action:** Do not block `paypal.com` solely because suspicious files communicated with it. **Investigate the related files and historical IP separately.**
+
+### 8. Key Learning
+
+> 		**A domain should not be judged only by its VirusTotal detection score. Correlate Detection → DNS → Registration → Certificate → Historical DNS → Subdomains → Related Files.**  
