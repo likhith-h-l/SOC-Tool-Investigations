@@ -8,14 +8,15 @@
 
 ### 2. Key Findings
 
-|Evidence|Finding|
-|---|---|
-|Detection|**0/91**|
-|Community Score|**-123**|
-|Creation Date|**26 Feb 2015**|
-|DNS Provider|**Cloudflare**|
-|Certificate Issuer|**Google Trust Services**|
-|Detected communicating files|**At least 9**|
+| Evidence                     | Finding                   |
+| ---------------------------- | ------------------------- |
+| Detection                    | **0/91**                  |
+| Community Score              | **-123**                  |
+| Creation Date                | **26 Feb 2015**           |
+| DNS Provider                 | **Cloudflare**            |
+| Certificate Issuer           | **Google Trust Services** |
+| Detected communicating files | **At least 9**            |
+
 
 VirusTotal did not directly detect the domain as malicious, but the negative community score and related files were notable.
 
