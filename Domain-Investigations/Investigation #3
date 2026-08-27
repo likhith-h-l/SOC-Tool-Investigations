@@ -8,15 +8,16 @@
 
 ### 2. Key Findings
 
-|Evidence|Finding|
-|---|---|
-|Detection|**0/91**|
-|Registration|**1 Nov 1994**|
-|Registrar|**MarkMonitor Inc.**|
-|DNSSEC|**Unsigned**|
-|Certificate Issuer|**DigiCert Inc.**|
-|Subdomains|**~9.2K**|
-|Major malicious findings|**None**|
+| Evidence                 | Finding              |
+| ------------------------ | -------------------- |
+| Detection                | **0/91**             |
+| Registration             | **1 Nov 1994**       |
+| Registrar                | **MarkMonitor Inc.** |
+| DNSSEC                   | **Unsigned**         |
+| Certificate Issuer       | **DigiCert Inc.**    |
+| Subdomains               | **~9.2K**            |
+| Major malicious findings | **None**             |
+
 
 VirusTotal showed no security-vendor detections for the primary domain.
 
