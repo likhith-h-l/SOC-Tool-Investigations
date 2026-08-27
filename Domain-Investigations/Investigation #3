@@ -1,0 +1,44 @@
+# VirusTotal Domain Investigation #3 — amazon.com
+
+### 1. Indicator
+
+- **Domain:** `amazon.com`
+- **Tool:** VirusTotal
+- **Type:** Domain Investigation
+
+### 2. Key Findings
+
+|Evidence|Finding|
+|---|---|
+|Detection|**0/91**|
+|Registration|**1 Nov 1994**|
+|Registrar|**MarkMonitor Inc.**|
+|DNSSEC|**Unsigned**|
+|Certificate Issuer|**DigiCert Inc.**|
+|Subdomains|**~9.2K**|
+|Major malicious findings|**None**|
+
+VirusTotal showed no security-vendor detections for the primary domain.
+
+### 3. Supporting Evidence
+
+- Amazon/AWS-related nameservers
+- Long domain history
+- Historical IPs checked → **0/91**
+- Example subdomains → **0/91**
+- HTTPS certificate issued by DigiCert
+- Extremely high popularity
+
+One vendor classified the domain as **Parked**, but this was treated as an isolated classification rather than evidence of malicious activity.
+
+### 4. Final Verdict
+
+**Classification:**  **Likely Legitimate**
+
+**Risk:** Low
+
+**Reason:** `0/91` detection + long registration history + Amazon/AWS infrastructure + clean historical IPs/subdomains + no significant malicious relationships.
+
+### 5. Key Learning
+
+> **A single unusual category such as "Parked" should be correlated with other evidence instead of immediately being treated as malicious.**
