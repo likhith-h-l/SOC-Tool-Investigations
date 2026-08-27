@@ -1,0 +1,52 @@
+# VirusTotal Domain Investigation #4 — cdn.discordapp.com
+
+### 1. Indicator
+
+- **Domain:** `cdn.discordapp.com`
+- **Tool:** VirusTotal
+- **Type:** Domain Investigation
+
+### 2. Key Findings
+
+|Evidence|Finding|
+|---|---|
+|Detection|**0/91**|
+|Community Score|**-123**|
+|Creation Date|**26 Feb 2015**|
+|DNS Provider|**Cloudflare**|
+|Certificate Issuer|**Google Trust Services**|
+|Detected communicating files|**At least 9**|
+
+VirusTotal did not directly detect the domain as malicious, but the negative community score and related files were notable.
+
+### 3. Important Finding
+
+VirusTotal showed:
+
+**At least 9 detected files communicating with `cdn.discordapp.com`.**
+
+This is important, but it **does not prove that Discord's CDN itself is malicious**. Legitimate services can be contacted by malicious software.
+
+### 4. SOC Analysis
+
+If this domain appeared in an alert, I would investigate:
+
+- Which internal host contacted it
+- Which process made the connection
+- Which URL/path was accessed
+- Which files communicated with it
+- DNS information
+- Endpoint security alerts
+- Whether the communication was expected
+
+I would particularly investigate **2–3 of the detected files** to understand the relationship.
+
+### 5. Final Verdict
+
+**Classification:**  **Suspicious / Requires Further Investigation**
+
+**Reason:** `0/91` direct detection, but **-123 community score + detected files communicating with the domain**.
+
+### 6. Key Learning
+
+> **A domain with 0 detections is not automatically safe. Correlate reputation, relationships, files, and network context before making a decision.**
