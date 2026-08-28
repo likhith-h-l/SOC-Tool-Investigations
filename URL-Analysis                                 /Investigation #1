@@ -1,0 +1,58 @@
+# VirusTotal Investigation #1 — URL Analysis
+
+## 1. Indicator Investigated
+
+**Type:** URL  
+**URL:** `http://testsafebrowsing.appspot.com/s/malware.html`
+
+## 2. Basic Information
+
+- **Final URL:** `https://testsafebrowsing.appspot.com/s/malware.html`
+- **Domain:** `testsafebrowsing.appspot.com`
+- **Serving IP:** `142.251.2.153`
+- **Status:** `200`
+- **Server:** Google Frontend
+
+## 3. Security Detection
+
+**Detection Ratio:** `11/92`
+
+- **Malicious:** 11
+- **Suspicious:** 3
+
+## 4. Reputation / Community
+
+- **Community Score:** `32`
+- Community information indicates this is a Google Safe Browsing test URL created to trigger browser security warnings.
+
+## 5. Technical Information
+
+- HTTP → HTTPS redirection
+- First Submission: `2016-10-02`
+- Related network request: `favicon.ico` → `404`
+- Google infrastructure observed
+
+## 6. Analysis
+
+Although multiple vendors flagged the URL, the additional context shows that it is intentionally designed to trigger security detections as part of Google's Safe Browsing testing.
+
+## 7. SOC Analyst Perspective
+
+If seen in a real alert, investigate:
+
+- User and endpoint
+- Browser/process
+- DNS/network activity
+- Downloads
+- Credential submission
+- Related indicators
+
+## 8. Final Verdict
+
+**Classification: Legitimate / Benign Security Test URL**
+
+The `11/92` detection should not be treated as proof of a real malicious campaign because this is an intentional security-testing URL.
+
+## 9. Key Learning
+
+**Detection ratio alone is not enough. Always investigate the context, infrastructure, behavior, and reputation before making a final verdict.**
