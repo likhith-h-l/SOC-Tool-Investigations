@@ -1,0 +1,62 @@
+# VirusTotal Investigation #2 — EICAR Anti-Malware Test URL
+
+## 1. Indicator Investigated
+
+**Type:** URL  
+**URL:** `https://www.eicar.org/download-anti-malware-testfile/`
+
+## 2. Basic Information
+
+- **Domain:** `www.eicar.org`
+- **Serving IP:** `89.238.73.97`
+- **Status:** `200`
+- **Server:** Apache
+- **Page:** Download Anti Malware Testfile - EICAR
+
+## 3. Security Detection
+
+**Detection Ratio:** `4/92`
+
+- **Malicious:** 4
+- **Suspicious:** 1
+- **Community Score:** 0
+
+## 4. Reputation / History
+
+- **First Submission:** 2022-05-03
+- **Last Analysis:** 2026-08-25
+- **Google Safe Browsing:** Clean
+- Most vendors classified the URL as clean.
+
+## 5. Technical Information
+
+- **Content Type:** `text/html`
+- **Tags:** `contains-zip`, `external-resources`
+- EICAR test files are linked from the page.
+- Network requests and outbound links were observed.
+
+## 6. Analysis
+
+Although 4 vendors flagged the URL, the page is specifically an **EICAR anti-malware test resource**. The linked EICAR test files are intentionally designed to trigger antivirus detection for testing security controls.
+
+Therefore, the detections do not indicate that the website is hosting real malware.
+
+## 7. SOC Analyst Perspective
+
+If this URL appeared in a real alert, I would verify:
+
+- Which user accessed it
+- Which endpoint accessed it
+- Whether an EICAR test file was downloaded
+- Whether antivirus detected the test file
+- Whether any actual malicious activity occurred
+
+## 8. Final Verdict
+
+**Classification: Legitimate / Benign Security Test Resource**
+
+The URL belongs to the EICAR anti-malware testing environment. The detections are expected because the purpose of the resource is to test antivirus/security controls.
+
+## 9. Key Learning
+
+**Always investigate the purpose and context of an indicator. A malicious detection can represent a legitimate security test rather than an actual malware infection.**
