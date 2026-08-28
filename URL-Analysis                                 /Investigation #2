@@ -1,7 +1,7 @@
 # VirusTotal Investigation #2 — EICAR Anti-Malware Test URL
 
 ## 1. Indicator Investigated
-
+ 
 **Type:** URL  
 **URL:** `https://www.eicar.org/download-anti-malware-testfile/`
 
