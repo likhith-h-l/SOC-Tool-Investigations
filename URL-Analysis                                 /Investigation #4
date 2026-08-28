@@ -1,0 +1,51 @@
+# VirusTotal Investigation #4 — URL Analysis
+
+## 1. Indicator Investigated
+
+**Type:** URL
+
+**URL:** `https://example.com/`
+
+## 2. Basic Information
+
+- **Domain:** `example.com`
+- **Serving IP:** `104.20.23.154`
+- **Final URL:** `https://example.com/`
+- **Status:** `200`
+
+## 3. Security Detection
+
+**Detection Ratio:** `0/92`
+
+- **Malicious:** 0
+- **Suspicious:** 0
+
+## 4. Reputation / History
+
+- **First Submission:** 2012-04-19
+- **Last Analysis:** 2026-08-26
+- No significant malicious reputation was observed.
+
+## 5. Analysis
+
+The URL has **0/92 detections**, an established history, and no reported malicious indicators in the information investigated.
+
+## 6. SOC Analyst Perspective
+
+If this URL appeared in an alert, I would still verify:
+
+- User who accessed it
+- Endpoint involved
+- DNS/network activity
+- Any redirects
+- Downloads or suspicious processes
+
+## 7. Final Verdict
+
+**Classification: Legitimate / Benign**
+
+The available VirusTotal evidence does not indicate malicious activity.
+
+## 8. Key Learning
+
+**A URL should be classified using multiple indicators, not a single reputation score.**
