@@ -1,0 +1,60 @@
+# VirusTotal Investigation #5 — URL Analysis
+
+## 1. Indicator Investigated
+
+**Type:** URL
+
+**URL:** `https://malware.wicar.org/data/eicar.com`
+
+## 2. Basic Information
+
+- **Domain:** `malware.wicar.org`
+- **Serving IP:** `208.94.116.246`
+- **Status:** `200`
+- **Content Type:** `application/x-msdownload`
+
+## 3. Security Detection
+
+**Detection Ratio:** `20/92`
+
+- **Malicious:** 20
+- **Suspicious:** 1
+
+## 4. Reputation / History
+
+- **First Submission:** 2017-11-12
+- **Last Analysis:** 2026-08-09
+- VirusTotal categories include **Malicious**, **Known Infection Source**, and **Malware Sites**.
+
+## 5. Technical Information
+
+- **Server:** Apache
+- **Content Type:** `application/x-msdownload`
+- **Response Size:** 69 B
+- **Status Code:** `200`
+
+## 6. Analysis
+
+Multiple security vendors identified the URL as malicious, while one vendor classified it as suspicious. The URL directly serves an executable-type file, which increases its security significance.
+
+However, the filename and context indicate that this is the **EICAR anti-malware test file**, which is intentionally designed to trigger antivirus detections.
+
+## 7. SOC Analyst Perspective
+
+If this URL appeared in a real alert, I would verify:
+
+- Which user accessed the URL
+- Which endpoint accessed it
+- Whether the file was downloaded
+- Whether antivirus/EDR detected the file
+- Whether the activity was part of an authorized security test
+
+## 8. Final Verdict
+
+**Classification: Malicious/Test Artifact**
+
+The URL is strongly flagged by security vendors and serves an executable-type test file. However, it represents an **intentional EICAR security test rather than genuine malware**.
+
+## 9. Key Learning
+
+**A high VirusTotal detection ratio is important evidence, but the analyst must investigate the context before concluding that a real malware infection occurred.**
