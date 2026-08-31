@@ -1,0 +1,196 @@
+# VirusTotal Investigation #2 — Hash Analysis
+
+## 1. Hash Investigated
+
+**SHA-256 Hash:** `d01f0af65ccff0a2465a657a691a90d4e7bfd0f1a1430cea74f05415bcc5e795`
+
+I investigated this hash using VirusTotal to identify the associated file, examine its reputation, review security-vendor detections, and determine whether the file appeared malicious or clean. VirusTotal supports searching existing file reports using MD5, SHA-1, or SHA-256 hashes.
+
+## 2. Basic File Information
+
+- **File Name:** `d3968b94d6ed86134b95d77e45a98804.jpg`
+- **File Type:** JPEG
+- **File Category:** Multimedia / Image
+- **File Extensions:** `.jpeg`, `.jpg`
+- **File Size:** 19.38 MB (20,323,635 bytes)
+
+## 3. File Hashes
+
+- **MD5:** `761c9fef74cbecd13d3f2199f2528cba`
+- **SHA-1:** `9cf16c86471e1632ec67c8aa7bf5d890ffaa0dbb`
+- **SHA-256:** `d01f0af65ccff0a2465a657a691a90d4e7bfd0f1a1430cea74f05415bcc5e795`
+
+The SHA-256 value can be used as a unique identifier for this particular file. VirusTotal's file objects use SHA-256 as the file object ID.
+
+## 4. Detection Results
+
+**Detection Ratio:** `0/49`
+
+- **Detected as malicious:** 0
+- **Security vendors that detected the file:** 0
+- **Security vendors that did not detect the file:** 49
+
+VirusTotal's file reports provide the results from individual security vendors, including whether a vendor considers the file undetected or suspicious/malicious.
+
+## 5. Submission and Analysis Information
+
+- **First Submission:** `2021-09-04 21:26:22 UTC`
+- **Last Submission:** `2023-03-11 16:07:02 UTC`
+- **Last Analysis:** `2023-03-11 16:07:02 UTC`
+
+These timestamps show when the file was submitted and analyzed by VirusTotal.
+
+## 6. File Names / Relations
+
+VirusTotal showed multiple names associated with the same file hash, including:
+
+- `d3968b94d6ed86134b95d77e45a98804.jpg`
+- `d015856241d445c30eea7ae576b10e39.jpg`
+- `d2a81fb6be403dbb0ed6b90366b899d8.jpg`
+- `5d4eed51274efb9b7288d68dcdb6b977.jpg`
+- `bff6a9128a9eefe82283bce506b45883.jpg`
+- `3aaa24b570379b285c0627abfd60f680.jpg`
+- `24decdd37d46500cebf32646dd551e72.jpg`
+- `e031ac2d0cd5f676d20a313aeb73d920.jpg`
+- `85c557f58c3d16146dd979334516efd4.jpg`
+- `9840aaaea026d5aa1885ce2bd79236d9.jpg`
+
+These different filenames can represent different names under which the same file hash was submitted.
+
+## 7. Threat Classification
+
+No malicious threat classification was identified in the information investigated.
+
+The file was identified as a **JPEG image**, and the available vendor results showed:
+
+**`0/49` detections.**
+
+## 8. Security Analysis
+
+The most important finding from this investigation is the **0/49 detection ratio**.
+
+No security vendor in the displayed analysis identified the file as malicious.
+
+The file also has a `.jpg`/`.jpeg` format and was categorized as a multimedia image.
+
+Based on the available VirusTotal results, there is no evidence from the vendor detections that this file is malicious.
+
+## 9. Final Verdict
+
+**Verdict: CLEAN / UNDETECTED**
+
+The investigated file had a **0/49 detection ratio**, meaning none of the 49 security vendors in the displayed analysis flagged it as malicious.
+
+Therefore, based on the available VirusTotal evidence, I classify this file as **Clean / Undetected**.
+
+However, a `0/49` result does **not guarantee that a file is completely safe**. A VirusTotal result represents the available detections at the time of analysis, so an analyst should consider additional context and behavioral evidence when necessary.
+
+## 10. Key SOC Analyst Learning
+
+This investigation demonstrates an important SOC principle:
+
+> **A file with zero detections should be considered undetected, not automatically proven safe.**
+
+A SOC analyst should examine:
+
+- Detection ratio
+- File type
+- File hashes
+- File names
+- Submission history
+- Threat classifications
+- Relations
+- Behavioral information when available
+- Other threat-intelligence sources
+
+before making a final decision.
+
+## 11. Investigation Summary
+
+| Category          | Finding                                                            |
+| ----------------- | ------------------------------------------------------------------ |
+| File              | `d3968b94d6ed86134b95d77e45a98804.jpg`                             |
+| Type              | JPEG Image                                                         |
+| Size              | 19.38 MB                                                           |
+| MD5               | `761c9fef74cbecd13d3f2199f2528cba`                                 |
+| SHA-1             | `9cf16c86471e1632ec67c8aa7bf5d890ffaa0dbb`                         |
+| SHA-256           | `d01f0af65ccff0a2465a657a691a90d4e7bfd0f1a1430cea74f05415bcc5e795` |
+| Detection         | **0/49**                                                           |
+| Malicious Vendors | **0**                                                              |
+| Verdict           | **Clean / Undetected**                                             |
+
+
+========================================================================================================================
+
+# VirusTotal Investigation #3 — Hash Analysis
+
+## 1. Hash Investigated
+
+**SHA-256:** `606baa263e87d32a64a9b191fc7e96ca066708b2f003bde35391908d3311a463`
+
+I investigated this hash using VirusTotal to identify the file, check its reputation, and determine whether it is malicious.
+
+## 2. Basic Information
+
+- **File Name:** `InnominataRemarry.exe`
+- **File Type:** Win32 DLL
+- **File Size:** 3.67 MB (3,847,168 bytes)
+- **Category:** Executable / Windows / PE
+
+## 3. File Hashes
+
+- **MD5:** `ba552beb4569c56830d112c017cf83ed`
+- **SHA-1:** `970001fbca83aa16c78c7af531a92dd5d8e30ea3`
+- **SHA-256:** `606baa263e87d32a64a9b191fc7e96ca066708b2f003bde35391908d3311a463`
+
+## 4. Detection
+
+**Detection Ratio:** `53/70`
+
+- **53 vendors** detected the file.
+- This is a strong indication of malicious activity.
+
+## 5. History
+
+- **Creation Time:** 2025-12-25 18:26:11 UTC
+- **First Submission:** 2026-01-15 20:37:48 UTC
+- **Last Submission:** 2026-01-15 20:37:48 UTC
+- **Last Analysis:** 2026-08-19 14:40:12 UTC
+
+## 6. Malware Labels
+
+VirusTotal showed the following family labels:
+
+- `stealer`
+- `aotera`
+- `convagent`
+
+These labels indicate that the file is associated with **information-stealing malware**.
+
+## 7. Contacted Domains
+
+The file contacted:
+
+- `api.ipify.org` — **0/91 detections**
+- `ip-api.com` — **0/91 detections**
+
+The domains themselves were not detected as malicious.
+
+## 8. Contacted IP Addresses
+
+- `162.159.36.2` — **0/91 detections**
+- `45.93.20.61` — **14/91 detections**
+
+The IP `45.93.20.61` is suspicious because it has multiple detections and is associated with **Trojan, Dropper, Stealer, Aotera, and Convagent** labels.
+
+## 9. Final Verdict
+
+**Verdict: MALICIOUS**
+
+The file has a high detection ratio of **53/70**, is associated with **stealer/Aotera/Convagent** malware labels, and communicates with a suspicious IP address that has **14/91 detections**.
+
+Based on these indicators, I classify this file as **malicious**.
+
+## 10. Key Learning
+
+This investigation shows that a SOC analyst should not rely on only one indicator. The **detection ratio, malware family labels, file information, and network connections** should be correlated before reaching a final verdict.
