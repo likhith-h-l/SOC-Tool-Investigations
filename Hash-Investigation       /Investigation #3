@@ -1,0 +1,72 @@
+# VirusTotal Investigation #3 — Hash Analysis
+
+## 1. Hash Investigated
+
+**SHA-256:** `606baa263e87d32a64a9b191fc7e96ca066708b2f003bde35391908d3311a463`
+
+I investigated this hash using VirusTotal to identify the file, check its reputation, and determine whether it is malicious.
+
+## 2. Basic Information
+
+- **File Name:** `InnominataRemarry.exe`
+- **File Type:** Win32 DLL
+- **File Size:** 3.67 MB (3,847,168 bytes)
+- **Category:** Executable / Windows / PE
+
+## 3. File Hashes
+
+- **MD5:** `ba552beb4569c56830d112c017cf83ed`
+- **SHA-1:** `970001fbca83aa16c78c7af531a92dd5d8e30ea3`
+- **SHA-256:** `606baa263e87d32a64a9b191fc7e96ca066708b2f003bde35391908d3311a463`
+
+## 4. Detection
+
+**Detection Ratio:** `53/70`
+
+- **53 vendors** detected the file.
+- This is a strong indication of malicious activity.
+
+## 5. History
+
+- **Creation Time:** 2025-12-25 18:26:11 UTC
+- **First Submission:** 2026-01-15 20:37:48 UTC
+- **Last Submission:** 2026-01-15 20:37:48 UTC
+- **Last Analysis:** 2026-08-19 14:40:12 UTC
+
+## 6. Malware Labels
+
+VirusTotal showed the following family labels:
+
+- `stealer`
+- `aotera`
+- `convagent`
+
+These labels indicate that the file is associated with **information-stealing malware**.
+
+## 7. Contacted Domains
+
+The file contacted:
+
+- `api.ipify.org` — **0/91 detections**
+- `ip-api.com` — **0/91 detections**
+
+The domains themselves were not detected as malicious.
+
+## 8. Contacted IP Addresses
+
+- `162.159.36.2` — **0/91 detections**
+- `45.93.20.61` — **14/91 detections**
+
+The IP `45.93.20.61` is suspicious because it has multiple detections and is associated with **Trojan, Dropper, Stealer, Aotera, and Convagent** labels.
+
+## 9. Final Verdict
+
+**Verdict: MALICIOUS**
+
+The file has a high detection ratio of **53/70**, is associated with **stealer/Aotera/Convagent** malware labels, and communicates with a suspicious IP address that has **14/91 detections**.
+
+Based on these indicators, I classify this file as **malicious**.
+
+## 10. Key Learning
+
+This investigation shows that a SOC analyst should not rely on only one indicator. The **detection ratio, malware family labels, file information, and network connections** should be correlated before reaching a final verdict.
