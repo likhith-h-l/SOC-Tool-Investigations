@@ -1,0 +1,63 @@
+# VirusTotal Investigation #4 — Hash Analysis
+
+## 1. Hash Investigated
+
+**SHA-256:** `4ee06ac4f0d73ec4d95cbc47a34ae550ab56f22efd19cc9aabf53e54d371e921`
+
+I investigated this hash using VirusTotal to identify the file, check its reputation, and determine whether it is clean, suspicious, or malicious.
+
+## 2. Basic Information
+
+- **File Name:** `SimpleExecution.xls`
+- **File Type:** MS Excel Spreadsheet
+- **Category:** Document / Spreadsheet / Excel
+- **File Size:** 291.50 KB (298,496 bytes)
+
+## 3. File Hashes
+
+- **MD5:** `deba2c20bbba9cf0695bfbba42ea2d81`
+- **SHA-1:** `1451aae8fa6b1043ea3a3dc580e5cce5b48c5af7`
+- **SHA-256:** `4ee06ac4f0d73ec4d95cbc47a34ae550ab56f22efd19cc9aabf53e54d371e921`
+
+## 4. Detection
+
+**Detection Ratio:** `26/59`
+
+- **26 vendors** detected the file.
+- **33 vendors** did not detect it.
+
+The detection ratio indicates that the file requires further investigation.
+
+## 5. History
+
+- **Creation Time:** 2021-03-03 15:17:42 UTC
+- **First Submission:** 2021-03-22 21:38:42 UTC
+- **Last Submission:** 2021-03-22 21:38:42 UTC
+- **Last Analysis:** 2022-03-25 01:37:18 UTC
+
+## 6. Security Analysis
+
+The file is an Excel `.xls` document with a **26/59 detection ratio**.
+
+The sample is associated with **Excel 4.0 macro execution**, including the use of the `EXEC` function to execute PowerShell commands. This behavior is suspicious because Office documents can abuse macros to execute commands on a victim's system.
+
+## 7. Final Verdict
+
+**Verdict: SUSPICIOUS / POTENTIALLY MALICIOUS**
+
+The file was detected by **26 out of 59 security vendors** and is associated with Excel macro-based execution involving PowerShell.
+
+Therefore, I would classify this file as **Suspicious / Potentially Malicious** and recommend further behavioral analysis before allowing it to execute.
+
+## 8. Key Learning
+
+This investigation shows that **Office documents can be used as an attack vector**.
+
+A SOC analyst should pay particular attention to:
+
+- Macro-enabled documents
+- Excel 4.0 macros
+- PowerShell execution
+- Encoded commands
+- High vendor detection
+- Suspicious document behavior
