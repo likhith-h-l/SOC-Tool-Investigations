@@ -1,0 +1,53 @@
+b12ac9dbda766a25854d6`
+- **SHA-1:** `4349156644c62a11e6ac8ddc0a82a769acaae780`
+- **SHA-256:** `1f42e1dc2ec916fd07fbd13177fe297094f54bcacb860268f1e31bef73bd7911`
+
+## 4. Detection
+
+**Detection Ratio:** `12/57`
+
+- **12 vendors** detected the file.
+- **45 vendors** did not detect it.
+
+The detection ratio indicates that the file requires further investigation.
+
+## 5. History
+
+- **Creation Time:** 2021-03-03 15:17:42 UTC
+- **First Submission:** 2021-03-22 21:47:50 UTC
+- **Last Submission:** 2021-03-22 21:47:50 UTC
+- **Last Analysis:** 2022-03-24 21:06:08 UTC
+
+## 6. Security Analysis
+
+The file is an Excel `.xls` document with a **12/57 detection ratio**.
+
+The filename contains **`Obfuscated`**, which is an important indicator to investigate because obfuscation can be used to hide potentially suspicious content or execution logic.
+
+However, the detection ratio alone is not enough to confidently classify the file as malicious.
+
+Further analysis of **macros, Excel 4.0 formulas, VBA content, behavior, and network activity** would be useful.
+
+## 7. Final Verdict
+
+**Verdict: SUSPICIOUS / REQUIRES FURTHER INVESTIGATION**
+
+The file was detected by **12 out of 57 security vendors** and has an **obfuscated Excel document** filename.
+
+Based on the available VirusTotal information, I classify the file as **Suspicious** and recommend further investigation before considering it safe or malicious.
+
+## 8. Key Learning
+
+This investigation shows that **a moderate detection ratio does not automatically mean a file is malicious**.
+
+A SOC analyst should correlate:
+
+- Detection ratio
+- File type
+- Filename
+- Obfuscation
+- Macros
+- File behavior
+- Network connections
+
+before making a final verdict.
