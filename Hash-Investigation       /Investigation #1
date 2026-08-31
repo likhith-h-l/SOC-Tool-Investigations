@@ -1,0 +1,100 @@
+# VirusTotal Investigation #1 — Hash Analysis
+
+## 1. Hash Investigated
+
+**MD5 Hash:** `44d88612fea8a8f36de82e1278abb02f`
+
+I investigated this hash using VirusTotal to identify the associated file, determine its reputation, analyze vendor detections, and understand its behavior and relationships.
+
+## 2. Basic File Information
+
+- **File Name:** `relatorio_seguranca.txt`
+- **File Size:** 68 B (68 bytes)
+- **File Type:** PowerShell
+- **File Extensions:** `.ps`, `.ps1`
+- **File Type Description:** PowerShell source/script file
+
+## 3. File Hashes
+
+- **MD5:** `44d88612fea8a8f36de82e1278abb02f`
+- **SHA-1:** `3395856ce81f2b7382dee72602f798b642f14140`
+- **SHA-256:** `275a021bbfb6489e54d471899f7db9d1663fc695ec2fe2a2c4538aabf651fd0f`
+
+These hashes can be used to uniquely identify and search for the file across security tools and threat-intelligence platforms.
+
+## 4. Detection Results
+
+**Detection Ratio:** `64/66`
+
+VirusTotal reported that **64 out of 66 security vendors detected the file**.
+
+This indicates that the file is strongly identified by security vendors.
+
+## 5. First Seen and Submission Information
+
+- **First Seen in the Wild:** `2012-06-14 17:16:14 UTC`
+- **First Submission:** `2006-05-22 12:42:02 UTC`
+- **Last Submission:** `2026-08-27 15:36:03 UTC`
+- **Last Analysis:** `2026-08-27 15:21:23 UTC`
+
+The long history of submissions and analyses shows that this hash has been known to VirusTotal for many years.
+
+## 6. Threat Classification
+
+VirusTotal associated the file with:
+
+**`virus.eicar/test`**
+
+Family labels included:
+
+- `eicar`
+- `test`
+- `file`
+
+The **EICAR test file** is intentionally designed to test antivirus and security products.
+
+## 7. Community Score
+
+**Community Score:** `3790`
+
+The high score indicates strong community activity/reputation associated with this file.
+
+## 8. Relations
+
+VirusTotal showed relationships associated with the file, including:
+
+**Contacted IP addresses:** `110`
+
+Examples include:
+
+- `100.22.10.168`
+- `104.69.6.116`
+- `104.88.206.137`
+- `104.88.206.141`
+- `104.88.206.142`
+
+The listed IP addresses showed **0 detections** in the displayed VirusTotal results.
+
+## 9. Security Analysis
+
+Although the detection ratio is very high, the VirusTotal classification identifies this sample as an **EICAR test file**.
+
+EICAR is not intended to be real malware. It is a standardized test artifact used to verify whether antivirus and security products correctly detect a simulated malicious file.
+
+Therefore, the high detection ratio should **not** be interpreted as evidence that this is an actual malware sample.
+
+## 10. Final Verdict
+
+**Verdict:** EICAR Test File / Security Testing Artifact
+
+The file is heavily detected by security vendors, with a detection ratio of **64/66**. However, VirusTotal identifies it with the `EICAR/test` classification.
+
+Therefore, this sample should **not be considered genuine malware**. It is an **EICAR antivirus test file used for security testing and detection validation**.
+
+## 11. Key SOC Analyst Learning
+
+This investigation demonstrates an important SOC principle:
+
+> **A high VirusTotal detection ratio does not automatically mean that a file is real malware.**
+
+An analyst must investigate the **file classification, family labels, hashes, relationships, timestamps, and vendor detections** before reaching a final conclusion.
